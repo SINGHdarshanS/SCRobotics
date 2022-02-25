@@ -56,10 +56,10 @@ for xy, angle in path:
     p, curr_rot = simxGetObjectPosition(cid, robot, -1, simx_opmode_blocking)
     print(curr_rot[2] - atan2(xy[1] - curr_pos[1], xy[0] - curr_pos[0]))
     while dist(xy, curr_pos) > eps:
-        dtheta = remainder(curr_rot[2] - atan2(xy[1] - curr_pos[1], xy[0] - curr_pos[0]) - (.831), 2*pi)
-        print(dtheta)
+        dtheta = remainder(curr_rot[2] - atan2(xy[1] - curr_pos[1], xy[0] - curr_pos[0]) - (0), 2*pi)
+        print(dist(xy, curr_pos))
         if abs(dtheta) > pi/16:
-            v = .03
+            v = .02
         else:
             v = .08
         w = .8 * dtheta
